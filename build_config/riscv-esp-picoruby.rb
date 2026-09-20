@@ -62,4 +62,11 @@ MRuby::CrossBuild.new('esp32-picoruby') do |conf|
   conf.gem core: 'picoruby-mbedtls'
   conf.gem core: 'picoruby-socket'
   # conf.gem core: 'picoruby-adafruit_sk6812'
+
+  # picoruby-tab5-display, an out-of-tree gem kept in the parent repository.
+  #
+  # This repository is used as a submodule, so the path points outside of it.
+  # It assumes this checkout lives inside takkanm/picoruby-tab5.
+  conf.gem File.expand_path('../../../mrbgems/picoruby-tab5-display', __dir__)
+
 end
